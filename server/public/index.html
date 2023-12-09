@@ -18,18 +18,18 @@
       <button id="divide-btn" onclick="operatorClicked(event)">/</button>
       <input placeholder="Second Number" id="secondNum">
       <button id="equals-btn" onclick="calculateValue(event)">=</button>
-      <button id="clear-btn">C</button>
+      <button id="clear-btn" onclick="clearInputs(event)">C</button>
     </form>
 
     <section data-testid="recentResult" id="recentResult">
       <!-- The most recent calculation result goes here. -->
       <h2>Result:</h2>
-      <div id="result"></div>
     </section>
 
-    <section data-testid="resultHistory" id="resultHistory">
+    <section data-testid="resultHistory">
       <!-- The list of calculation results goes here. -->
       <h3>History</h3>
+      <div id="resultHistory"></div>
       
     </section>
   </body>

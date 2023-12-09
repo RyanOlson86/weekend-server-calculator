@@ -32,20 +32,20 @@ app.post('/calculations', (req, res)=>{
 
 function calculateResult(incObject){
   // console.log(incObject)
-  let number1 = JSON.parse(incObject.numbers.num1)
-  let number2 = JSON.parse(incObject.numbers.num2)
+  let number1 = JSON.parse(incObject.numOne)
+  let number2 = JSON.parse(incObject.numTwo)
 
-  if (incObject.numbers.operator==='+'){
-    incObject.numbers.result = number1 + number2
+  if (incObject.operator==='+'){
+    incObject.result = number1 + number2
   }
-  if (incObject.numbers.operator==='-'){
-    incObject.numbers.result = number1 - number2
+  if (incObject.operator==='-'){
+    incObject.result = number1 - number2
   }
-  if (incObject.numbers.operator==='*'){
-    incObject.numbers.result = number1 * number2
+  if (incObject.operator==='*'){
+    incObject.result = number1 * number2
   }
-  if (incObject.numbers.operator==='/'){
-    incObject.numbers.result = number1 / number2
+  if (incObject.operator==='/'){
+    incObject.result = number1 / number2
   }
 
 }
