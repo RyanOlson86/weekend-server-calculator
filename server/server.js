@@ -24,7 +24,7 @@ app.get('/calculations', (req, res)=>{
 app.post('/calculations', (req, res)=>{
   console.log('In POST /calculations', req.body)
   calculateResult(req.body)
-  console.log(req.body)
+  calculations.push(req.body)
   res.sendStatus(201);
 })
 
