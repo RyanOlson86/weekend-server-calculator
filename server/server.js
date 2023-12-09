@@ -6,6 +6,7 @@ let PORT = process.env.PORT || 5001;
 app.use(express.json());
 app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended:true}))
+app.use( bodyParser.json());
 
 // Global variable that will contain all of the
 // calculation objects:
@@ -30,20 +31,21 @@ app.post('/calculations', (req, res)=>{
 
 
 function calculateResult(incObject){
-  let number1 = JSON.parse(incObject.num1)
-  let number2 = JSON.parse(incObject.num2)
+  // console.log(incObject)
+  let number1 = JSON.parse(incObject.numbers.num1)
+  let number2 = JSON.parse(incObject.numbers.num2)
 
-  if (incObject.operator==='+'){
-    incObject.result = number1 + number2
+  if (incObject.numbers.operator==='+'){
+    incObject.numbers.result = number1 + number2
   }
-  if (incObject.operator==='-'){
-    incObject.result = number1 - number2
+  if (incObject.numbers.operator==='-'){
+    incObject.numbers.result = number1 - number2
   }
-  if (incObject.operator==='*'){
-    incObject.result = number1 * number2
+  if (incObject.numbers.operator==='*'){
+    incObject.numbers.result = number1 * number2
   }
-  if (incObject.operator==='/'){
-    incObject.result = number1 / number2
+  if (incObject.numbers.operator==='/'){
+    incObject.numbers.result = number1 / number2
   }
 
 }

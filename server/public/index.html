@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Server-Side Calculator</title>    
+    <title>Server-Side Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>    
     <script defer src="scripts/axios.js"></script>
     <script defer src="scripts/client.js" charset="utf-8"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
     <h1>Server-Side Calculator</h1>
@@ -21,12 +21,16 @@
       <button id="clear-btn">C</button>
     </form>
 
-    <section data-testid="recentResult">
+    <section data-testid="recentResult" id="recentResult">
       <!-- The most recent calculation result goes here. -->
+      <h2>Result:</h2>
+      <div id="result"></div>
     </section>
 
-    <section data-testid="resultHistory">
+    <section data-testid="resultHistory" id="resultHistory">
       <!-- The list of calculation results goes here. -->
+      <h3>History</h3>
+      
     </section>
   </body>
 </html>
